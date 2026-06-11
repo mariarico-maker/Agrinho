@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Unificado</title>
+    
+    <!-- ESTILOS (CSS) -->
+    <style>
+        /* Reset básico de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Barra de Navegação */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 20px 50px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00adb5;
+        }
+
+        /* Seção Principal (Hero) */
+        .hero {
+            height: calc(100vh - 74px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #222831;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #393e46;
+        }
+
+        /* Botão */
+        #colorBtn {
+            padding: 12px 30px;
+            font-size: 16px;
+            background-color: #00adb5;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        #colorBtn:hover {
+            background-color: #007c82;
+            transform: translateY(-2px);
+        }
+
+        #colorBtn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTEÚDO (HTML) -->
+    <nav class="navbar">
+        <div class="logo">MeuSite</div>
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo ao Futuro</h1>
+            <p>Criando experiências incríveis com HTML, CSS e JavaScript.</p>
+            <button id="colorBtn">Mudar Cor de Fundo</button>
+        </div>
+    </header>
+
+    <!-- COMPORTAMENTO (JAVASCRIPT) -->
+    <script>
+        // Seleciona o botão no HTML
+        const botao = document.getElementById('colorBtn');
+
+        // Lista de cores modernas para alternar
+        const cores = ['#f4f7f6', '#dff6f0', '#f1e4e8', '#e8f4f8', '#fef5ed'];
+        let indice = 0;
+
+        // Adiciona o evento de clique
+        botao.addEventListener('click', () => {
+            // Avança para a próxima cor da lista
+            indice = (indice + 1) % cores.length;
+            
+            // Aplica a nova cor ao fundo do body
+            document.body.style.backgroundColor = cores[indice];
+        });
+    </script>
+</body>
+</html>
